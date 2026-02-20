@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Smart AI Scanner Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+</head>
+<body>
+
+    <div id="loader-screen">
+        <div class="spinner"></div>
+        <p id="loader-text">AI Tizimi tayyorlanmoqda...</p>
+    </div>
+
+    <div class="main-container">
+        <video id="video" autoplay muted playsinline></video>
+        
+        <div class="scanner-frame">
+            <div class="scanner-line"></div>
+            <div class="corner top-left"></div>
+            <div class="corner top-right"></div>
+            <div class="corner bottom-left"></div>
+            <div class="corner bottom-right"></div>
+        </div>
+
+        <div id="ui-panel">
+            <div id="status">Kameraga ruxsat kutilmoqda...</div>
+            <div class="progress-box" id="progress-box">
+                <div class="progress-bar" id="scan-bar"></div>
+            </div>
+        </div>
+
+        <div id="result-screen" class="modal">
+            <div class="modal-content">
+                <div id="result-icon">🔍</div>
+                <h2 id="result-title">Aniqlandi!</h2>
+                <p id="result-info"></p>
+                <button onclick="restartScanner()" class="btn-retry">Qayta skanerlash</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
